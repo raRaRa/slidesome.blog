@@ -17,8 +17,9 @@ The only thing you’ll need to do is migrate your Instagram personal profile fe
 3. Remove the personal Instagram profile feed.
 4. Add the personal Instagram profile feed.
 
+
 There’s only one thing missing in their brand new API, which is profile pictures. We have already sent the Instagram team feedback on this and we hope that profiles pictures for personal profile feed will return in the future.
 
 We apologize for the inconvenience this may cause. Please don’t hesitate to contact us if you have any questions.
 
-> [Get started today for free](https://slidesome.com)
+[Get started today for free](https://slidesome.com)
