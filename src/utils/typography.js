@@ -16,6 +16,20 @@ Wordpress2016.overrideThemeStyles = ({ adjustFontSizeTo, rhythm }) => {
         },
         a: {
             color: `rgba(240, 98, 146, 1)`,
+            // textDecoration: 'none',
+            boxShadow: 'none',
+        },
+        body: {
+            fontWeight: 200,
+            // fontSize: 16,
+        },
+        h3: {
+            fontWeight: 400,
+        },
+        h1: {
+            fontFamily: `'kanit', verdana`,
+            fontWeight: 500,
+            
         },
         // "h1": {
         //     fontFamily: `"Kanit",sans-serif`,
@@ -34,6 +48,7 @@ delete Wordpress2016.googleFonts
 
 Wordpress2016.headerFontFamily = ['kanit', 'verdana']
 Wordpress2016.bodyFontFamily = ['kanit', 'verdana']
+Wordpress2016.baseFontSize = "18px"
 // Wordpress2016.headerColor = `rgba(240, 98, 146, 1)`
 
 const typography = new Typography(Wordpress2016)

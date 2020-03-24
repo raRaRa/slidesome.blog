@@ -12,7 +12,7 @@ import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/logo-150.png/" }) {
         childImageSharp {
@@ -36,32 +36,32 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
-  return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={`Slidesome`}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          width: rhythm(2),
-            height: rhythm(2),
-        //   borderRadius: `100%`,
-        }}
-      />
-      <p style={{ maxWidth: 310 }}>
-        The latest news and updates from{` `}
-        <a href="https://slidesome.com">Slidesome</a>
-      </p>
-    </div>
-  )
+    // const { author, social } = data.site.siteMetadata
+    return (
+        <div
+            style={{
+                display: `flex`,
+                marginBottom: rhythm(2),
+            }}
+        >
+            <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={`Slidesome`}
+                style={{
+                    marginRight: rhythm(1 / 2),
+                    marginBottom: 0,
+                    minWidth: 50,
+                    width: rhythm(2),
+                    height: rhythm(2),
+                    //   borderRadius: `100%`,
+                }}
+            />
+            <p style={{ maxWidth: 310 }}>
+                The latest news and updates from{` `}
+                <a href="https://slidesome.com">Slidesome</a>
+            </p>
+        </div>
+    )
 }
 
 export default Bio
