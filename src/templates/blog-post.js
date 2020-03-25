@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -8,76 +9,96 @@ import { rhythm, scale } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+    const post = data.markdownRemark
+    const siteTitle = data.site.siteMetadata.title
+    const { previous, next } = pageContext
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-            {` • ${formatReadingTime(post.timeToRead)}`}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
+    return (
+        <Layout
+            location={location}
+            title={siteTitle}
+            cover={post.frontmatter.cover}
         >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
-  )
+            <SEO
+                title={post.frontmatter.title}
+                description={post.frontmatter.description || post.excerpt}
+            />
+            <article>
+                <header>
+                    <h1
+                        style={{
+                            marginTop: rhythm(0),
+                            marginBottom: rhythm(1),
+                        }}
+                    >
+                        {post.frontmatter.title}
+                    </h1>
+                    {post.frontmatter.cover && (
+                        <Image
+                            sizes={post.frontmatter.cover.childImageSharp.sizes}
+                        />
+                    )}
+                    <p
+                        style={{
+                            ...scale(-1 / 5),
+                            display: `block`,
+                            marginBottom: rhythm(1),
+                        }}
+                    >
+                        {post.frontmatter.date}
+                        {` • ${formatReadingTime(post.timeToRead)}`}
+                    </p>
+                </header>
+                <section dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr
+                    style={{
+                        marginBottom: rhythm(1),
+                    }}
+                />
+                <footer>
+
+                    <Link
+                        style={{
+                            fontSize: '1.4em',
+                            // boxShadow: `none`,
+                            // textDecoration: `none`,
+                            // color: `inherit`,
+                        }}
+                        to={`/`}
+                    >
+                        ← Back to all posts
+                    </Link>
+                </footer>
+            </article>
+
+            {/* <nav>
+                <ul
+                    style={{
+                        display: `flex`,
+                        flexWrap: `wrap`,
+                        justifyContent: `space-between`,
+                        listStyle: `none`,
+                        padding: 0,
+                    }}
+                >
+                    <li>
+                        {previous && (
+                            <Link to={previous.fields.slug} rel="prev">
+                                ← {previous.frontmatter.title}
+                            </Link>
+                        )}
+                    </li>
+                    <li>
+                        {next && (
+                            <Link to={next.fields.slug} rel="next">
+                                {next.frontmatter.title} →
+                            </Link>
+                        )}
+                    </li>
+                </ul>
+            </nav> */}
+        </Layout>
+    )
 }
 
 export default BlogPostTemplate
@@ -98,6 +119,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        cover {
+          publicURL
+          childImageSharp {
+            sizes(maxWidth: 2000) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

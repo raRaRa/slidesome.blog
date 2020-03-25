@@ -2,9 +2,8 @@
 title: Upcoming Instagram changes
 date: "2020-03-12"
 description: The Instagram team is deprecating their old legacy API on the 31st of March, which will be replaced with their brand new Instagram Basic Display API. We have already made the necessary changes on Slidesome and we have also been approved to use the new API.
+cover: './header.png'
 ---
-
-![Instagram](./header.png)
 
 > Please note that these changes only affect slideshows that have a personal Instagram profile feed, they do not affect Instagram hashtag feeds
 

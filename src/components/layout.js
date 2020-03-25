@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Header from './Header'
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, cover, children }) => {
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -30,24 +30,7 @@ const Layout = ({ location, title, children }) => {
             </h1>
         )
     } else {
-        header = (
-            <h3
-                style={{
-                    fontFamily: `Montserrat, sans-serif`,
-                    marginTop: 0,
-                }}
-            >
-                <Link
-                    style={{
-                        boxShadow: `none`,
-                        textDecoration: `none`,
-                        color: `inherit`,
-                    }}
-                    to={`/`}
-                >
-                    All posts
-                </Link>
-            </h3>
+        header = (<></>
         )
     }
     return (
@@ -57,7 +40,7 @@ const Layout = ({ location, title, children }) => {
                 style={{
                     marginLeft: `auto`,
                     marginRight: `auto`,
-                    maxWidth: rhythm(24),
+                    maxWidth: rhythm(30),
                     padding: `${rhythm(4.5)} ${rhythm(3 / 4)} ${rhythm(2.5)} ${rhythm(3 / 4)}`,
                 }}
             >
@@ -66,9 +49,7 @@ const Layout = ({ location, title, children }) => {
                 )}
                 <main>{children}</main>
                 <footer>
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>
+                    © {new Date().getFullYear()} Slidesome
                 </footer>
             </div>
         </>
