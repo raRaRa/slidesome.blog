@@ -23,11 +23,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
             />
+            <Link
+                style={{
+                    fontSize: '1.4em',
+                }}
+                to={`/`}
+            >
+                ← Back to all posts
+            </Link>
             <article>
                 <header>
                     <h1
                         style={{
-                            marginTop: rhythm(0),
+                            marginTop: 0,
                             marginBottom: rhythm(1),
                         }}
                     >
@@ -50,19 +58,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     </p>
                 </header>
                 <section dangerouslySetInnerHTML={{ __html: post.html }} />
-                <hr
+                {/* <hr
                     style={{
                         marginBottom: rhythm(1),
                     }}
-                />
+                /> */}
                 <footer>
 
                     <Link
                         style={{
                             fontSize: '1.4em',
-                            // boxShadow: `none`,
-                            // textDecoration: `none`,
-                            // color: `inherit`,
                         }}
                         to={`/`}
                     >

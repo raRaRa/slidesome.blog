@@ -41,7 +41,7 @@ const Layout = ({ location, title, cover, children }) => {
                     marginLeft: `auto`,
                     marginRight: `auto`,
                     maxWidth: rhythm(30),
-                    padding: `${rhythm(4.5)} ${rhythm(3 / 4)} ${rhythm(2.5)} ${rhythm(3 / 4)}`,
+                    padding: `${rhythm(3.5)} ${rhythm(3 / 4)} ${rhythm(2.5)} ${rhythm(3 / 4)}`,
                 }}
             >
                 {location.pathname !== rootPath && (

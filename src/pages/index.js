@@ -7,6 +7,95 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
+import style from './index.module.scss'
+
+const renderPost = (post, index) => {
+    const title = post.frontmatter.title || post.fields.slug
+
+
+    if (index === 0) {
+        return (
+            <article
+                key={post.fields.slug}
+                className={style.mainArticle}
+            >
+                <header>
+                    <h1
+                        style={{
+                            marginBottom: rhythm(2 / 4),
+                            marginTop: 0,
+                        }}
+                    >
+                        <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                            {title}
+                        </Link>
+                    </h1>
+                    <section>
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: post.frontmatter.description || post.excerpt,
+                            }}
+                        />
+                    </section>
+                    {post.frontmatter.cover && (
+                        <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                            <Image
+                                sizes={post.frontmatter.cover.childImageSharp.sizes}
+                            />
+                        </Link>
+                    )}
+                    <small>
+                        {post.frontmatter.date}
+                        {` • ${formatReadingTime(post.timeToRead)}`}
+                    </small>
+                </header>
+            </article>
+        )
+    }
+
+    return (
+        <article
+            key={post.fields.slug}
+            className={style.secondaryArticle}
+            // style={getSecondaryStyles(index)}
+        >
+            <header>
+                <h3
+                    style={{
+                        marginBottom: rhythm(2 / 4),
+                        marginTop: 0,
+                    }}
+                >
+                    <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                        {title}
+                    </Link>
+                </h3>
+                <section>
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html: post.frontmatter.description || post.excerpt,
+                        }}
+                    />
+                </section>
+                {post.frontmatter.cover && (
+                    <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                        <Image
+                            objectFit="cover"
+                            sizes={post.frontmatter.cover.childImageSharp.sizes}
+                            imgStyle={{
+                                // height: '12em',
+                            }}
+                        />
+                    </Link>
+                )}
+                <small>
+                    {post.frontmatter.date}
+                    {` • ${formatReadingTime(post.timeToRead)}`}
+                </small>
+            </header>
+        </article>
+    )
+}
 
 const BlogIndex = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata.title
@@ -19,48 +108,11 @@ const BlogIndex = ({ data, location }) => {
         >
             <SEO title="All posts" />
             {/* <Bio /> */}
-            {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug
-                return (
-                    <article
-                        key={node.fields.slug}
-                        style={{
-                            marginBottom: rhythm(3.5),
-                        }}
-                    >
-                        <header>
-                            <h1
-                                style={{
-                                    marginBottom: rhythm(2 / 4),
-                                    marginTop: 0,
-                                }}
-                            >
-                                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                                    {title}
-                                </Link>
-                            </h1>
-                            <section>
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: node.frontmatter.description || node.excerpt,
-                                    }}
-                                />
-                            </section>
-                            {node.frontmatter.cover && (
-                                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                                    <Image
-                                        sizes={node.frontmatter.cover.childImageSharp.sizes}
-                                    />
-                                </Link>
-                            )}
-                            <small>
-                                {node.frontmatter.date}
-                                {` • ${formatReadingTime(node.timeToRead)}`}
-                            </small>
-                        </header>
-                    </article>
-                )
-            })}
+            <div className={style.articles}>
+                {posts.map(({ node }, i) => {
+                    return renderPost(node, i)
+                })}
+            </div>
         </Layout>
     )
 }
@@ -91,6 +143,9 @@ export const pageQuery = graphql`
               childImageSharp {
                 sizes(maxWidth: 2000) {
                   ...GatsbyImageSharpSizes
+                }
+                fixed(width: 125, height: 125) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

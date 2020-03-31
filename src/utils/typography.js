@@ -11,7 +11,7 @@ Wordpress2016.overrideThemeStyles = ({ adjustFontSizeTo, rhythm }) => {
             borderLeft: `${rhythm(3 / 16)} solid rgba(240, 98, 146, 1)`,
             marginLeft: 0,
         },
-        ol: {
+        'ol, ul': {
             listStylePosition: `inside`,
         },
         a: {
@@ -25,6 +25,10 @@ Wordpress2016.overrideThemeStyles = ({ adjustFontSizeTo, rhythm }) => {
         },
         h3: {
             fontWeight: 400,
+        },
+        h2: {
+            fontWeight: 400,
+            paddingBottom: '0em',
         },
         h1: {
             fontFamily: `'kanit', verdana`,
