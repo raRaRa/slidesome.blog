@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import Header from './Header'
+import Footer from "./Footer/Footer"
 
 const Layout = ({ location, title, cover, children }) => {
     const rootPath = `${__PATH_PREFIX__}/`
@@ -41,17 +42,15 @@ const Layout = ({ location, title, cover, children }) => {
                     marginLeft: `auto`,
                     marginRight: `auto`,
                     maxWidth: rhythm(30),
-                    padding: `${rhythm(3.5)} ${rhythm(3 / 4)} ${rhythm(2.5)} ${rhythm(3 / 4)}`,
+                    padding: `${rhythm(3.5)} ${rhythm(3 / 4)} ${rhythm(14.5)} ${rhythm(3 / 4)}`,
                 }}
             >
                 {location.pathname !== rootPath && (
                     <header>{header}</header>
                 )}
                 <main>{children}</main>
-                <footer>
-                    © {new Date().getFullYear()} Slidesome
-                </footer>
             </div>
+            <Footer />
         </>
     )
 }

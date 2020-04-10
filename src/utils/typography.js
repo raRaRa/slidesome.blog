@@ -23,6 +23,9 @@ Wordpress2016.overrideThemeStyles = ({ adjustFontSizeTo, rhythm }) => {
             fontWeight: 200,
             // fontSize: 16,
         },
+        strong: {
+            fontWeight: 400,
+        },
         h3: {
             fontWeight: 400,
         },
