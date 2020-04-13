@@ -4,8 +4,6 @@ date: "2020-01-06"
 description: We're thrilled to announce our latest features which include support for LinkedIn and RSS feeds as well as relative time filter for feeds. We also added support for right to left languages on Twitter, new information post frequency, notifications for payments and of course plenty of fixes and tweaks!
 cover: 'unsplash.jpg'
 ---
-We're thrilled to announce our latest features which include support for LinkedIn and RSS feeds as well as relative time filter for feeds. We also added support for right to left languages on Twitter, new information post frequency, notifications for payments and of course plenty of fixes and tweaks!
-
 ## LinkedIn feed
 
 This has been frequently requested by our customers and we’re happy to announce that we now support LinkedIn feed from your LinkedIn company pages, so you can now display posts from your LinkedIn company page in your slideshow.

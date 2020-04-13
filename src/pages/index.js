@@ -117,7 +117,7 @@ const BlogIndex = ({ data, location }) => {
                         <h1>
                             Blog
                         </h1>
-                        <p>Latest news and updates from Slidesome</p>
+                        <p>Latest news and updates</p>
                     </div>
 
                     <div className={style.articles}>

@@ -11,7 +11,11 @@ $primaryColor: rgba(240, 98, 146, 1);
     background-color: #fff;
     box-shadow: 0px 0px 6px 0px #ccc;
     transform: translateY(0px);
-    transition: height 0.5s ease-in-out, transform 0.8s ease;
+    transition: height 0.5s ease-in-out, transform 0.8s ease, box-shadow .8s ease;
+
+    &.isTop {
+        box-shadow: 0px 0px 0px 0px #ccc;
+    }
 
     &.darkMode {
         transform: translateY(-90px);
@@ -49,7 +53,7 @@ $primaryColor: rgba(240, 98, 146, 1);
         }
 
         a.getStartedBtn {
-            margin: 19px 0 19px 20px;
+            margin: 20px 0 20px 20px;
             padding: 4px 18px;
             font-size: 18px;
         }

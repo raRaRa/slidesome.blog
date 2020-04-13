@@ -1,9 +1,15 @@
 .specialHeader {
     h1 {
+        font-size: 1.8em;
         color: #fff;
-        font-weight: 500;
-        font-size: 3em;
+        font-weight: 400;
+
+        @media (min-width: 768px) {
+            font-size: 3em;
+            font-weight: 500;
+        }
     }
+
     margin-bottom: 8em;
     p {
         font-weight: 300;
@@ -15,8 +21,6 @@
 .articles {
     .cover {
         box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.35);
-    }
-    .cover {
         margin-top: 2em;
         border-radius: 25px;
     }

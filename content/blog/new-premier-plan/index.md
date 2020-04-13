@@ -2,7 +2,7 @@
 title: New Premier plan
 date: "2019-12-06"
 description: We are excited to announce our new Premier plan. The Premier plan has several new exclusive features such as analytics, fetching hashtagged tweets back in time, custom branding and more. 
-# cover: '2020-03-31-15-05-29.png'
+cover: 'launch.jpg'
 ---
 We're thrilled to announce our latest features which include support for LinkedIn and RSS feeds as well as relative time filter for feeds. We also added support for right to left languages on Twitter, new information post frequency, notifications for payments and of course plenty of fixes and tweaks!
 

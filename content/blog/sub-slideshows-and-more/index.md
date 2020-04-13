@@ -2,7 +2,7 @@
 title: Sub-slideshows and more!
 date: "2019-12-10"
 description: We are excited to announce our latest Slidesome update which includes sub-slideshows, new Quotes template, games and more!
-cover: './header.png'
+cover: './cover.jpg'
 ---
 
 The biggest new feature is the ability to create sub-slideshows for a single slideshow. Sub-slideshows are ideal if you want to create multiple different customization or text filters for a single slideshow. For example, you could create a special sub-slideshow that is optimized for vertical screens and then another sub-slideshow that is optimized for horizontal screens, or you could create a sub-slideshow that has different settings or themes, e.g. only display the newest 10 posts for a special screen or disable the information post, etc.
