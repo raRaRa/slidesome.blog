@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+// import { rhythm, scale } from "../utils/typography"
 import Header from './Header'
 import Footer from "./Footer/Footer"
+import Container from "./Container"
 
 const Layout = ({ location, title, cover, children }) => {
     const rootPath = `${__PATH_PREFIX__}/`
@@ -13,8 +14,8 @@ const Layout = ({ location, title, cover, children }) => {
         header = (
             <h1
                 style={{
-                    ...scale(1.5),
-                    marginBottom: rhythm(1.5),
+                    // ...scale(1.5),
+                    // marginBottom: rhythm(1.5),
                     marginTop: 0,
                 }}
             >
@@ -37,19 +38,11 @@ const Layout = ({ location, title, cover, children }) => {
     return (
         <>
             <Header />
-            <div
-                style={{
-                    marginLeft: `auto`,
-                    marginRight: `auto`,
-                    maxWidth: rhythm(30),
-                    padding: `${rhythm(3.5)} ${rhythm(3 / 4)} ${rhythm(14.5)} ${rhythm(3 / 4)}`,
-                }}
-            >
-                {location.pathname !== rootPath && (
-                    <header>{header}</header>
-                )}
-                <main>{children}</main>
-            </div>
+
+            {location.pathname !== rootPath && (
+                <header>{header}</header>
+            )}
+            <main>{children}</main>
             <Footer />
         </>
     )

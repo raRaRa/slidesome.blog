@@ -71,6 +71,7 @@ const Header = () => {
                             primary
                             notResponsive
                             spanEffect
+                            isNormalLink
                             title="Sign in to get started"
                             to="https://slidesome.com/"
                         >

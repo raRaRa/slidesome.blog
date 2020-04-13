@@ -1,7 +1,7 @@
 $primaryColor: rgba(240, 98, 146, 1);
 
 .footerWrapper {
-    line-height:22.4px;
+    // margin-top: 10em;
     position: relative;
     // min-height: 440px;
     margin-top: -356px;
@@ -12,6 +12,60 @@ $primaryColor: rgba(240, 98, 146, 1);
 
     @media (min-width: 768px) {
         z-index: 4;
+
+        &.isSmall {
+            // padding-left: 220px;
+            // z-index: 0;
+            padding-top: 0px;
+        }
+    }
+
+    &.isSmall {
+        margin-top: -142px;
+
+        .footer {
+            border-top: 1px solid #eee;
+            padding: 24px 0 10px 0;
+            background: #fff;
+            font-size: 0.96em;
+
+            h4 {
+                color: $primaryColor;
+                font-size: 1.2em;
+            }
+            .socialIcons {
+                font-size: 1.2em;
+                margin-top: 6px;
+
+                a {
+                    margin-left: 0.6em;
+                    background: #fff;
+
+                    width: 30px;
+                    height: 30px;
+
+                    img {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+            ul {
+                li {
+                    a {
+                        line-height: 26px;
+                        color: lighten($primaryColor, 10);
+                        &:before {
+                            background: $primaryColor;
+                        }
+
+                        &:hover {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .shape {
@@ -37,7 +91,7 @@ $primaryColor: rgba(240, 98, 146, 1);
         }
     }
     .footer {
-        // font-size: 16px;
+        font-size: 16px;
         position: relative;
         padding-bottom: 40px;
         text-align: center;
@@ -46,7 +100,7 @@ $primaryColor: rgba(240, 98, 146, 1);
         background: $primaryColor;
 
         @media (min-width: 768px) {
-            font-size: .98em;
+            font-size: 1em;
             text-align: left;
             padding-bottom: 70px;
         }
@@ -56,13 +110,10 @@ $primaryColor: rgba(240, 98, 146, 1);
         }
 
         h4 {
-            margin-bottom: 10px;
             font-weight: 400;
             color: #fff;
             font-size: 22px;
             margin-top: 20px;
-            letter-spacing: normal;
-            text-transform: unset;
             @media (min-width: 768px) {
                 margin-top: 0px;
             }
@@ -74,9 +125,6 @@ $primaryColor: rgba(240, 98, 146, 1);
             padding: 0;
 
             li {
-                padding: 0;
-                margin: 0;
-                font-size: .9em;
                 &.faq {
                     a {
                         letter-spacing: 1px;
@@ -197,11 +245,10 @@ $primaryColor: rgba(240, 98, 146, 1);
     }
     .copyright {
         font-family: Helvetica, Verdana;
-        font-size: 0.8em;
+        font-size: 0.9em;
         color: #fff;
         opacity: 0.9;
         margin-top: 20px;
-        margin-bottom: 1rem;
 
         @media (min-width: 768px) {
             margin-top: 0px;

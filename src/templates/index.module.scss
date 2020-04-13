@@ -1,0 +1,39 @@
+.article {
+    .specialNav {
+        margin-bottom: 6em;
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            font-weight: 500;
+            // margin-bottom: 4em;
+        }
+        a {
+            color: #202020;
+            font-weight: 300;
+        }
+    }
+    p,
+    ul,
+    li {
+        font-size: 1.2em;
+
+        &.posted {
+            padding: 0 0 0em 0;
+        }
+    }
+}
+
+h3.title {
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
+.cover {
+    margin-bottom: 2em;
+    max-width: 1000px;
+}
+
+.footer {
+    margin-top: 5em;
+}

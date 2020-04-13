@@ -21,7 +21,7 @@ const Footer = () => {
             <div className={style.shape} />
             <div className={style.footer}>
                 <div className={style.content}>
-                    <Container>
+                    <Container extraLarge>
                         <Row>
                             <Column xs={12} sm={12} md={3} lg={3}>
                                 <h4>Find us on</h4>

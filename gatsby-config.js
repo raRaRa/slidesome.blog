@@ -3,11 +3,11 @@ module.exports = {
   siteMetadata: {
     title: `Blog - Slidesome`,
     author: {
-      name: `Slidesome`,
-      summary: `What's new in Slidesome`,
+      name: `Blog - Slidesome`,
+      summary: `Latest news and updates`,
     },
     description: `Slidesome blog`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://slidesome.com/blog`,
     social: {
       twitter: `slidesome`,
       facebook: `slidesome`,
@@ -74,12 +74,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

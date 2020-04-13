@@ -2,12 +2,13 @@ import React from 'react'
 import classNames from 'classnames'
 
 import style from './Button.module.scss'
+import { navigate } from 'gatsby'
 
 
 const Button = ({
     children,
     className,
-    // disabled,
+    disabled,
     title,
     fill,
     floatLeft,
@@ -21,18 +22,27 @@ const Button = ({
     noColor,
     lightFont,
     // isLink,
-    // isNormalLink,
-    // type,
+    isNormalLink,
+    type,
     target,
     ref,
     notResponsive,
     isUnderlineLink,
     to,
     // redirect,
-    // onClick,
+    onClick,
     spanEffect,
 }) => {
+    const clickHandler = () => {
+        if (to !== undefined) {
+            navigate(to)
+            // window.scrollTo(0, 0);
+        }
 
+        if (onClick !== undefined) {
+            onClick()
+        }
+    }
     const classes = classNames({
         [style.btn]: true,
         [className]: className !== undefined,
@@ -52,17 +62,31 @@ const Button = ({
         [style.spanEffect]: spanEffect !== undefined,
     })
 
+    if (isNormalLink) {
+        return (
+            <a
+                className={classes}
+                href={to}
+                title={title}
+                onClick={to === undefined ? clickHandler : null}
+                ref={ref}
+                target={target}
+            >
+                {children}
+            </a>
+        )
+    }
+
     return (
-        <a
+        <button
             className={classes}
-            href={to}
+            onClick={clickHandler}
             title={title}
-            // onClick={to === undefined ? clickHandler : null}
-            ref={ref}
-            target={target}
+            disabled={disabled}
+            type={type || 'button'}
         >
             {children}
-        </a>
+        </button>
     )
 }
 

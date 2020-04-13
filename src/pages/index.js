@@ -5,9 +5,12 @@ import Image from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
 import style from './index.module.scss'
+import Container from "../components/Container"
+import Column from "../components/Column"
+import PageHeaderEffect from "../components/PageHeaderEffect"
 
 const renderPost = (post, index) => {
     const title = post.frontmatter.title || post.fields.slug
@@ -22,7 +25,7 @@ const renderPost = (post, index) => {
                 <header>
                     <h1
                         style={{
-                            marginBottom: rhythm(2 / 4),
+                            // marginBottom: rhythm(2 / 4),
                             marginTop: 0,
                         }}
                     >
@@ -30,6 +33,10 @@ const renderPost = (post, index) => {
                             {title}
                         </Link>
                     </h1>
+                    <p className={style.posted}>
+                        {post.frontmatter.date}
+                        {` • ${formatReadingTime(post.timeToRead)}`}
+                    </p>
                     <section>
                         <p
                             dangerouslySetInnerHTML={{
@@ -41,13 +48,10 @@ const renderPost = (post, index) => {
                         <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
                             <Image
                                 sizes={post.frontmatter.cover.childImageSharp.sizes}
+                                className={style.cover}
                             />
                         </Link>
                     )}
-                    <small>
-                        {post.frontmatter.date}
-                        {` • ${formatReadingTime(post.timeToRead)}`}
-                    </small>
                 </header>
             </article>
         )
@@ -57,12 +61,12 @@ const renderPost = (post, index) => {
         <article
             key={post.fields.slug}
             className={style.secondaryArticle}
-            // style={getSecondaryStyles(index)}
+        // style={getSecondaryStyles(index)}
         >
             <header>
                 <h3
                     style={{
-                        marginBottom: rhythm(2 / 4),
+                        // marginBottom: rhythm(2 / 4),
                         marginTop: 0,
                     }}
                 >
@@ -70,7 +74,11 @@ const renderPost = (post, index) => {
                         {title}
                     </Link>
                 </h3>
-                <section>
+                <p className={style.subposted}>
+                    {post.frontmatter.date}
+                    {` • ${formatReadingTime(post.timeToRead)}`}
+                </p>
+                <section className={style.section}>
                     <p
                         dangerouslySetInnerHTML={{
                             __html: post.frontmatter.description || post.excerpt,
@@ -82,16 +90,10 @@ const renderPost = (post, index) => {
                         <Image
                             objectFit="cover"
                             sizes={post.frontmatter.cover.childImageSharp.sizes}
-                            imgStyle={{
-                                // height: '12em',
-                            }}
+                            className={style.subcover}
                         />
                     </Link>
                 )}
-                <small>
-                    {post.frontmatter.date}
-                    {` • ${formatReadingTime(post.timeToRead)}`}
-                </small>
             </header>
         </article>
     )
@@ -108,12 +110,24 @@ const BlogIndex = ({ data, location }) => {
         >
             <SEO title="All posts" />
             {/* <Bio /> */}
-            <div className={style.articles}>
-                {posts.map(({ node }, i) => {
-                    return renderPost(node, i)
-                })}
-            </div>
-        </Layout>
+            <PageHeaderEffect />
+            <Container hasMargin extraLarge>
+                <Column>
+                    <div className={style.specialHeader}>
+                        <h1>
+                            Blog
+                        </h1>
+                        <p>Latest news and updates from Slidesome</p>
+                    </div>
+
+                    <div className={style.articles}>
+                        {posts.map(({ node }, i) => {
+                            return renderPost(node, i)
+                        })}
+                    </div>
+                </Column>
+            </Container >
+        </Layout >
     )
 }
 

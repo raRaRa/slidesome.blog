@@ -2,7 +2,7 @@
 title: New Features For 2020!
 date: "2020-01-06"
 description: We're thrilled to announce our latest features which include support for LinkedIn and RSS feeds as well as relative time filter for feeds. We also added support for right to left languages on Twitter, new information post frequency, notifications for payments and of course plenty of fixes and tweaks!
-cover: '2020-03-31-15-05-29.png'
+cover: 'unsplash.jpg'
 ---
 We're thrilled to announce our latest features which include support for LinkedIn and RSS feeds as well as relative time filter for feeds. We also added support for right to left languages on Twitter, new information post frequency, notifications for payments and of course plenty of fixes and tweaks!
 

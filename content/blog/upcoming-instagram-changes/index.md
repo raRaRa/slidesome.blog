@@ -7,7 +7,7 @@ cover: './header.png'
 
 > Please note that these changes only affect slideshows that have a personal Instagram profile feed, they do not affect Instagram hashtag feeds
 
-The Instagram team is deprecating their old legacy API on the 31st of March, which will be replaced with their brand new Instagram Basic Display API. We have already made the necessary changes on Slidesome and we have also been approved to use the new API.
+<!-- The Instagram team is deprecating their old legacy API on the 31st of March, which will be replaced with their brand new Instagram Basic Display API. We have already made the necessary changes on Slidesome and we have also been approved to use the new API. -->
 
 The only thing you’ll need to do is migrate your Instagram personal profile feed by the 31st of March. The steps to migrate your feed are simple:
 

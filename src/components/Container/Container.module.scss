@@ -5,6 +5,8 @@
     margin-right: auto;
     margin-left: auto;
 
+    // margin-top: 8em;
+
     @media (min-width: 576px) {
         max-width: 540px;
     }
@@ -17,8 +19,20 @@
     @media (min-width: 1200px) {
         max-width: 1140px;
     }
-    @media (min-width: 1400px) {
-        max-width: 1340px;
+
+    // &.extraLarge {
+    //     @media (min-width: 1400px) {
+    //         max-width: 1340px;
+    //     }
+    // }
+
+    &.hasMargin {
+        margin-top: 7.5em;
+        margin-bottom: 28em;
+    }
+
+    &.hasMarginTop {
+        margin-top: 7.5em;
     }
 }
 
