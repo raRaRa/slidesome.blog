@@ -23,6 +23,12 @@
         box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.35);
         margin-top: 2em;
         border-radius: 25px;
+
+        transition: box-shadow .4s ease;
+
+        &:hover {
+            box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.50);
+        }
     }
     .subcover {
         max-height: 300px;
@@ -30,6 +36,11 @@
 
         box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.35);
         border-radius: 25px;
+        transition: box-shadow .4s ease;
+
+        &:hover {
+            box-shadow: 0 0 50px -3px rgba(0, 0, 0, 0.50);
+        }
     }
     .section {
         min-height: 180px;
