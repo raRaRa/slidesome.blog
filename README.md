@@ -1,14 +1,10 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
+
 <h1 align="center">
-  Slidesome blog is based on the Gatsby blog starter
+  Blog website for Slidesome
 </h1>
 
-The Slidesome blog is a heavily modified version of the Gatsby blog starter. Typography has been removed and custom styles used instead.
+The Slidesome blog is a heavily modified version of the Gatsby blog starter. Typography has been removed and custom styles added instead.
 
 ## 🚀 Quick start
 
@@ -32,7 +28,7 @@ The Slidesome blog is a heavily modified version of the Gatsby blog starter. Typ
 
 ## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+Looking for Gatsby guidance? Full documentation for Gatsby lives [on the Gatsby website](https://www.gatsbyjs.org/). Here are some places to start:
 
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 

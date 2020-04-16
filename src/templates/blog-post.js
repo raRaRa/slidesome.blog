@@ -55,6 +55,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                             <h3 className={style.title}>{post.frontmatter.description}</h3>
                             {post.frontmatter.cover && (
                                 <Image
+                                    objectFit="fixed"
                                     sizes={post.frontmatter.cover.childImageSharp.sizes}
                                     className={style.cover}
                                 />

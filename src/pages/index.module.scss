@@ -71,7 +71,11 @@
         &.secondaryArticle {
             margin-top: 4em;
             h3 {
-                font-size: 2em;
+                font-size: 1.8em;
+
+                @media (min-width: 768px) {
+                    font-size: 2em;
+                }
             }
             p {
                 font-size: 1.2em;
