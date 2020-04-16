@@ -7,7 +7,6 @@ node_js:
 deploy:
   provider: script
   script: sh deploy.sh slidesome-beta E1CQWHJ6UTR39N
-  # script: cd docs/ && yarn install && yarn run deploy
   skip_cleanup: true
   on:
     branch: master
