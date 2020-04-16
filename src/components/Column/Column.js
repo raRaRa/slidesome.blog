@@ -22,8 +22,6 @@ const Column = ({
         [className]: className !== undefined,
     })
 
-    console.log(style)
-
     return (
         <div
             className={classes}
