@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import jpgShare from '../assets/share.jpg'
 
 const SEO = ({
     description,
@@ -25,6 +26,7 @@ const SEO = ({
           siteMetadata {
             title
             description
+            siteUrl
             social { twitter }
           }
         }
@@ -56,11 +58,11 @@ const SEO = ({
                 },
                 {
                     property: `og:image`,
-                    content: image,
+                    content: image != null && image.length > 0 ? image : `${site.siteMetadata.siteUrl}${jpgShare}`,
                 },
                 {
                     property: `og:url`,
-                    content: location.href,
+                    content: location != null && location.href != null ? location.href : `${site.siteMetadata.siteUrl}/`,
                 },
                 {
                     property: `fb:app_id`,

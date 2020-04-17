@@ -108,7 +108,7 @@ const BlogIndex = ({ data, location }) => {
             location={location}
             title={siteTitle}
         >
-            <SEO title="All posts" />
+            <SEO title="Latest news and updates from Slidesome" />
             {/* <Bio /> */}
             <PageHeaderEffect />
             <Container hasMargin extraLarge>
