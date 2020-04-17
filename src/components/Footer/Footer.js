@@ -61,7 +61,7 @@ const Footer = () => {
                             <Column xs={12} sm={12} md={3} lg={3}>
                                 <h4>Information</h4>
                                 <ul className="list-unstyled">
-                                    <li><a href="http://blog.slidesome.com">Blog</a></li>
+                                    <li><a href="https://slidesome.com/blog/">Blog</a></li>
                                     <li className={style.faq}><a title="Frequently asked questions" href="/faq/">FAQ</a></li>
                                     <li><a title="About us" href="/about/">About</a></li>
                                     <li><a title="Contact us" href="/contact/">Contact</a></li>
