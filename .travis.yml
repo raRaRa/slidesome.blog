@@ -6,7 +6,13 @@ node_js:
 - '10'
 deploy:
   provider: script
-  script: sh deploy.sh slidesome-beta E1CQWHJ6UTR39N
+  script: sh deploy.sh slidesome-live EH7GRDXS5AH23
   skip_cleanup: true
   on:
     branch: master
+# deploy: <-- BETA
+#   provider: script
+#   script: sh deploy.sh slidesome-beta E1CQWHJ6UTR39N
+#   skip_cleanup: true
+#   on:
+#     branch: master
