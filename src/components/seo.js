@@ -58,7 +58,7 @@ const SEO = ({
                 },
                 {
                     property: `og:image`,
-                    content: image != null && image.length > 0 ? image : `${site.siteMetadata.siteUrl.replace('blog/', '')}${jpgShare}`,
+                    content: image != null && image.length > 0 ? image : `${site.siteMetadata.siteUrl}${jpgShare.replace('blog/', '')}`,
                 },
                 {
                     property: `og:url`,
