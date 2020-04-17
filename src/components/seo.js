@@ -16,6 +16,7 @@ const SEO = ({
     meta,
     title,
     image,
+    location,
 }) => {
     const { site } = useStaticQuery(
         graphql`
@@ -56,6 +57,14 @@ const SEO = ({
                 {
                     property: `og:image`,
                     content: image,
+                },
+                {
+                    property: `og:url`,
+                    content: location.href,
+                },
+                {
+                    property: `fb:app_id`,
+                    content: `1618479641801770`,
                 },
                 {
                     property: `og:type`,

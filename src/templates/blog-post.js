@@ -27,6 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
                 image={`${data.site.siteMetadata.siteUrl}${post.frontmatter.cover.childImageSharp.sizes.src}`}
+                location={location}
             />
             <PageHeaderEffect />
             <Container hasMargin>
