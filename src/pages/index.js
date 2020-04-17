@@ -11,6 +11,7 @@ import style from './index.module.scss'
 import Container from "../components/Container"
 import Column from "../components/Column"
 import PageHeaderEffect from "../components/PageHeaderEffect"
+import jpgShare from '../assets/share.jpg'
 
 const renderPost = (post, index) => {
     const title = post.frontmatter.title || post.fields.slug
@@ -108,7 +109,11 @@ const BlogIndex = ({ data, location }) => {
             location={location}
             title={siteTitle}
         >
-            <SEO title="Latest news and updates from Slidesome" />
+            <SEO
+                title="Latest news and updates from Slidesome"
+                url={`${data.site.siteMetadata.siteUrl}/`}
+                image={`${data.site.siteMetadata.siteUrl}${jpgShare.replace('blog/', '')}`}
+            />
             {/* <Bio /> */}
             <PageHeaderEffect />
             <Container hasMargin extraLarge>
@@ -138,6 +143,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

@@ -16,6 +16,7 @@ import Column from "../components/Column"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
     const post = data.markdownRemark
     const siteTitle = data.site.siteMetadata.title
+    console.log(location)
     // const { previous, next } = pageContext
     return (
         <Layout
@@ -26,8 +27,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <SEO
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
-                image={`${data.site.siteMetadata.siteUrl}${post.frontmatter.cover.childImageSharp.sizes.src}`}
-                location={location}
+                image={`${data.site.siteMetadata.siteUrl}${post.frontmatter.cover.childImageSharp.sizes.src.replace('blog/', '')}`}
+                url={`${data.site.siteMetadata.siteUrl}${location.pathname.replace('blog/', '')}`}
             />
             <PageHeaderEffect />
             <Container hasMargin>
