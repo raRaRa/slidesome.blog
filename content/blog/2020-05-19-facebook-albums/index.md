@@ -1,5 +1,5 @@
 ---
-title: Add Facebook Album feeds to your slideshows
+title: Support for Facebook Albums
 date: "2020-05-19"
 description: We recently added support for Facebook Album feeds, which allows you to display photos from your Facebook Albums in your slideshow.
 cover: './header.jpg'
