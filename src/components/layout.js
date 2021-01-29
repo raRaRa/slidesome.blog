@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 // import { rhythm, scale } from "../utils/typography"
 import Header from './Header'
 import Footer from "./Footer/Footer"
-import Container from "./Container"
 
 const Layout = ({ location, title, cover, children }) => {
     const rootPath = `${__PATH_PREFIX__}/`
