@@ -1,7 +1,7 @@
 ---
 title: Update to the Slidesome companion app
 date: "2021-01-29"
-description: This latest update to the Slidesome companion app gives you access to all your slideshows as well as the ability to easily remote control your slideshow from your device.
+description: This latest update to the Slidesome companion app gives you access to all your slideshows as well as the ability to easily remote control your slideshows from your device.
 cover: './header.jpg'
 ---
 
@@ -11,7 +11,7 @@ The Slidesome companion app has received an update to make it easier to play and
 
 The Slidesome app has been a hit at virtual events in the past year as it allows users to easily upload and share photos without having to post to public social media networks. 
 
-<br />
+Download the Slidesome companion app today from the [App Store](https://apps.apple.com/us/app/slidesome/id1498111136) or [Google Play](https://play.google.com/store/apps/details?id=com.slidesome.mobileapp)
 
 Your feedback is always welcome, [please let us know if you have any questions or comments](https://slidesome.com/contact/).
 
