@@ -1,7 +1,7 @@
 ---
 title: Update to the Slidesome companion app
 date: "2021-01-29"
-description: This latest update to the Slidesome companion app gives you access to all your slideshows as well as the ability to easily remote control your slideshows from your device.
+description: This latest update to the Slidesome companion app gives you access to all your slideshows as well as the ability to easily remote control your slideshows from your phone or tablet.
 cover: './header.jpg'
 ---
 
