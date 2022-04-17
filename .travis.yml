@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - 17
 before_script:
 - pip install --user awscli
 - npm install -g gatsby-cli
