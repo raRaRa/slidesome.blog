@@ -10,7 +10,7 @@ import Container from '../Container'
 //     Row,
 //     Column,
 // } from 'Layouts'
-import style from './Footer.module.scss'
+import * as style from './Footer.module.scss'
 
 const year = new Date().getUTCFullYear()
 const Footer = () => {

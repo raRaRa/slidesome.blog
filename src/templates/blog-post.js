@@ -1,22 +1,18 @@
 import React from "react"
 import { Link, graphql, navigate } from "gatsby"
-import Image from "gatsby-image"
-
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { rhythm, scale } from "../utils/typography"
-import style from './index.module.scss'
+import * as style from './index.module.scss'
 import { formatReadingTime } from "../utils/helpers"
 import Button from "../components/Button/components/Button"
 import Container from "../components/Container"
 import PageHeaderEffect from "../components/PageHeaderEffect"
 import Column from "../components/Column"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
     const post = data.markdownRemark
     const siteTitle = data.site.siteMetadata.title
-    console.log(location)
     // const { previous, next } = pageContext
     return (
         <Layout
@@ -27,7 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <SEO
                 title={post.frontmatter.title}
                 description={post.frontmatter.description || post.excerpt}
-                image={`${data.site.siteMetadata.siteUrl}${post.frontmatter.cover.childImageSharp.sizes.src.replace('blog/', '')}`}
+                image={`${data.site.siteMetadata.siteUrl}${post.frontmatter.cover.publicURL.replace('blog/', '')}`}
                 url={`${data.site.siteMetadata.siteUrl}${location.pathname.replace('blog/', '')}`}
             />
             <PageHeaderEffect />
@@ -56,9 +52,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                             </p>
                             <h3 className={style.title}>{post.frontmatter.description}</h3>
                             {post.frontmatter.cover && (
-                                <Image
-                                    objectFit="fixed"
-                                    sizes={post.frontmatter.cover.childImageSharp.sizes}
+                                <GatsbyImage
+                                    image={post.frontmatter.cover.childImageSharp.gatsbyImageData}
+                                    alt={post.frontmatter.title}
+                                    // objectFit="fixed"
+                                    // sizes={post.frontmatter.cover.childImageSharp.sizes}
                                     className={style.cover}
                                 />
                             )}
@@ -129,9 +127,10 @@ export const pageQuery = graphql`
         cover {
           publicURL
           childImageSharp {
-            sizes(maxWidth: 2000) {
-              ...GatsbyImageSharpSizes
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
+            # fluid(maxWidth: 2000) {
+            #   ...GatsbyImageSharpFluid
+            # }
           }
         }
       }

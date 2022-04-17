@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import style from './Column.module.scss'
+import * as style from './Column.module.scss'
 
 const Column = ({
     children,

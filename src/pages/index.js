@@ -1,13 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helpers"
-import style from './index.module.scss'
+import * as style from './index.module.scss'
 import Container from "../components/Container"
 import Column from "../components/Column"
 import PageHeaderEffect from "../components/PageHeaderEffect"
@@ -15,7 +13,6 @@ import jpgShare from '../assets/share.jpg'
 
 const renderPost = (post, index) => {
     const title = post.frontmatter.title || post.fields.slug
-
 
     if (index === 0) {
         return (
@@ -47,10 +44,12 @@ const renderPost = (post, index) => {
                     </section>
                     {post.frontmatter.cover && (
                         <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                            {/* <StaticImage src={post.frontmatter.cover.publicURL} alt="Image" />
                             <Image
                                 sizes={post.frontmatter.cover.childImageSharp.sizes}
                                 className={style.cover}
-                            />
+                            /> */}
+                            <GatsbyImage objectFit="cover" image={post.frontmatter.cover.childImageSharp.gatsbyImageData} alt="Cover" className={style.cover} />
                         </Link>
                     )}
                 </header>
@@ -88,11 +87,13 @@ const renderPost = (post, index) => {
                 </section>
                 {post.frontmatter.cover && (
                     <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+                        <GatsbyImage objectFit="cover" image={post.frontmatter.cover.childImageSharp.gatsbyImageData} alt="Cover" className={style.subcover} />
+                        {/* <StaticImage src={post.frontmatter.cover.publicURL} />
                         <Image
                             objectFit="cover"
                             sizes={post.frontmatter.cover.childImageSharp.sizes}
                             className={style.subcover}
-                        />
+                        /> */}
                     </Link>
                 )}
             </header>
@@ -161,12 +162,13 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 2000) {
-                  ...GatsbyImageSharpSizes
-                }
-                fixed(width: 125, height: 125) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
+                # fluid(maxWidth: 2000) {
+                #   ...GatsbyImageSharpFluid
+                # }
+                # fixed(width: 125, height: 125) {
+                #   ...GatsbyImageSharpFixed
+                # }
               }
             }
           }

@@ -16,7 +16,7 @@ cover: './header.jpg'
 4. Choose *Facebook Album* under *Choose Facebook feed from*.
 
 
-<img src="2020-05-19-11-07-52.png" alt="How to add Facebook Album feed"/>
+<img src="./2020-05-19-11-07-52.png" alt="How to add Facebook Album feed"/>
 
 <br />
 

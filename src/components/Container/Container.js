@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import style from './Container.module.scss'
+import * as style from './Container.module.scss'
 
 const Container = ({
     flex,

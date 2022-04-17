@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import style from './Header.module.scss'
+import * as style from './Header.module.scss'
 import logo from '../assets/slidesome.svg'
 import Button from './Button/components/Button'
 

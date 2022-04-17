@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import style from './Button.module.scss'
+import * as style from './Button.module.scss'
 import { navigate } from 'gatsby'
 
 

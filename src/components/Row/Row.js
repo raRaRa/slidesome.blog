@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import style from './Row.module.scss'
+import * as style from './Row.module.scss'
 
 class Row extends React.PureComponent {
     render() {

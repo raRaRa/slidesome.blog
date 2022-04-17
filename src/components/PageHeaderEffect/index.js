@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import style from './PageHeaderEffect.module.scss'
+import * as style from './PageHeaderEffect.module.scss'
 
 const PageHeaderEffect = () => (
     <div
