@@ -2,7 +2,7 @@
 title: Updates to direct upload and Dropbox
 date: "2022-09-09"
 description: We have released an update to direct upload and Dropbox. You can now store directly uploaded posts with Slidesome instead of using Google Drive or Google Photos. We also added support to fetch media from Dropbox Team folders.
-cover: './header.png'
+cover: './headernew.png'
 ---
 
 
